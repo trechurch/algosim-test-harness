@@ -34,3 +34,9 @@ export function resetProgress(): void {
   failCount = 0;
   failList.length = 0;
 }
+//--- End of Logger.ts ---  
+// This file provides logging functionality for test results, including tracking the number of tests, successes, and failures.
+// It also allows for resetting the progress and logging detailed information about each test case.
+// The `failList` array is used to store failed test items for further analysis.
+// The `log` function formats and outputs the results of each test, while `updateProgress` updates the counts and prints the current progress.
+// The `resetProgress` function clears all counts and the fail list, allowing for a fresh start in testing.
