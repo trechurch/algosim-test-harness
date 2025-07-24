@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "ESNext",
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "node"
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
+}
+//--- IGNORE ---
+// This is a TypeScript configuration file for a project that uses ES2020 features and modules
+// It specifies the output directory, root directory, and various compiler options for strict type checking and
+// module resolution. The "include" and "exclude" fields define which files are part of the project.    

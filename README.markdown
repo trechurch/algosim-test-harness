@@ -29,4 +29,5 @@ Optionally embed in a scene for graphical test results
 🔎 AI debugging: generate ground-truth validation for prompt responses.
 🧪 Web test suites: replace unit assertions with expressive test blocks.
 🧠 3D geometry verification: use Three.js scenes with evaluate() driving visuals.
+ 
 
