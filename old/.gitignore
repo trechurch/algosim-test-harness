@@ -1,0 +1,34 @@
+<<<<<<< HEAD:.specstory/.gitignore
+# SpecStory explanation file
+/.what-is-this.md
+=======
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Diagnostic reports (https://nodejs.org/api/report.html)
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+<<<<<<< HEAD
+=======
+
+>>>>>>> dfe296250262134ae672dbb6d255b0822420b5db
+# Bower dependency directory (https://bower.io/)
+bower_components
+
+
+# TypeScript cache
+*.tsbuildinfo
+<<<<<<< HEAD
+//--- IGNORE ---
+# This is a .gitignore file for a JavaScript project that uses Node.js and TypeScript.
+# It specifies files and directories that should be ignored by Git version control. 
+# It includes logs, diagnostic reports, Bower dependencies, TypeScript cache files, and various IDE/editor specific files.  
+# IDE/editor specific files
+=======
+>>>>>>> dfe296250262134ae672dbb6d255b0822420b5db
+>>>>>>> b1d16eebbb7e0eb4e5d882902544c2f33da1b8c8:old/.gitignore
