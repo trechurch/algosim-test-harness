@@ -1,7 +1,7 @@
 {
-  "name": "algosim-test-harness",
+  "name": "astratest",
   "version": "1.0.0",
-  "description": "TypeScript test harness inspired by AlgoSim's SelfTest.pas",
+  "description": "A TypeScript test harness for rigorous expression validation, inspired by AlgoSim, with support for symbolic math and visualization",
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
