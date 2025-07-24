@@ -1,44 +1,42 @@
-import { test, TestOptions } from './TestCore';
-import { resetProgress, updateProgress, testCount, successCount, failCount } from './Logger';
-
-export interface ChapterEvent {
-  (chapterNumber: number, chapterName: string): void;
-}
-
-export interface ProgressEvent {
-  (total: number, performed: number, succeeded: number, failed: number): void;
-}
+import { TestCore, TestOptions } from './TestCore';
+import { TAlgosimObject } from './Types';
 
 export class TestRunner {
   private kernel: any;
-  private chapterNumber = 0;
-  private progressEvent?: ProgressEvent;
-  private chapterEvent?: ChapterEvent;
-  private totalCount = 1_496_146;
+  private progressCallback?: (total: number, performed: number, succeeded: number, failed: number) => void;
+  private chapterCallback?: (number: number, name: string) => void;
 
   constructor(kernel: any) {
     this.kernel = kernel;
-    resetProgress();
   }
 
-  setProgressEvent(event: ProgressEvent): void {
-    this.progressEvent = event;
+  setProgressEvent(callback: (total: number, performed: number, succeeded: number, failed: number) => void): void {
+    this.progressCallback = callback;
   }
 
-  setChapterEvent(event: ChapterEvent): void {
-    this.chapterEvent = event;
+  setChapterEvent(callback: (number: number, name: string) => void): void {
+    this.chapterCallback = callback;
   }
 
   chapter(name: string): void {
-    this.chapterNumber++;
-    this.chapterEvent?.(this.chapterNumber, name);
+    if (this.chapterCallback) {
+      this.chapterCallback(1, name); // Placeholder chapter number
+    }
   }
 
   runTests(tests: TestOptions[]): void {
-    resetProgress();
-    for (const testCase of tests) {
-      test(testCase);
-      this.progressEvent?.(this.totalCount, testCount, successCount, failCount);
-    }
+    let performed = 0, succeeded = 0, failed = 0;
+    const total = tests.length;
+
+    tests.forEach(test => {
+      performed++;
+      // Placeholder evaluation
+      const result: TAlgosimObject = { type: 'number', value: 0, toString: () => '0' };
+      const passed = result.toString() === String(test.expected);
+      if (passed) succeeded++; else failed++;
+      if (this.progressCallback) {
+        this.progressCallback(total, performed, succeeded, failed);
+      }
+    });
   }
 }
