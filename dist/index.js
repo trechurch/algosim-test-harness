@@ -14,5 +14,8 @@ const tests = [
     { line: 579, expr: 'true', expected: true },
     { line: 67412, expr: 'Roman(0)', expected: 'N', testSL: true, sl: 'N' },
     { line: 67413, expr: 'Roman(1)', expected: 'I', testSL: true, sl: 'I' },
+    { line: 67414, expr: 'Roman(2)', expected: 'II', testSL: true, sl: 'II' },
+    { line: 67415, expr: 'Roman(3)', expected: 'III', testSL: true, sl: 'III' },
+    { line: 67416, expr: 'Roman(4)', expected: 'IV', testSL: true, sl: 'IV' },
 ];
 runner.runTests(tests);

@@ -12,11 +12,9 @@ export function evaluate(expr: string): TAlgosimObject {
     if (expr === 'colorize(pixmap)') return { type: 'rgb', value: { r: 255, g: 128, b: 0 } };
     throw new Error(`Expression not implemented: ${expr}`);
   } catch (error) {
-    return { type: 'failure', value: { reason: error.message } };
+    const reason = error instanceof Error ? error.message : 'Unknown error occurred';
+    return { type: 'failure', value: { reason } };
   }
 }
 
-export { TAlgosimObject };
-
-
-  export { TAlgosimObject, TASR, TASI, TASC, TRationalNumber, TRGB, THSV, THSL, TASOSignal, TASR, TASI, TASC, TRationalNumber, TRGB, THSV, THSL, TASOSignal };
+export { TAlgosimObject, TASR, TASI, TASC, TRationalNumber, TRGB, THSV, THSL, TASOSignal };
